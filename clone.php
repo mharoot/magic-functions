@@ -1,48 +1,46 @@
 <?php
-class SubObject
+class Student
 {
-    static $instances = 0;
-    public $instance;
+    static $idx = 0;
+    public $id;
+    public $name;
 
-    public function __construct() {
-        $this->instance = ++self::$instances;
+    public function __construct($name) {
+        $this->id = ++self::$idx;
+        $this->name = $name;
     }
 
     public function __clone() {
-        $this->instance = ++self::$instances;
+        $this->id = ++self::$idx;
     }
 }
 
-class MyCloneable
+class Classroom
 {
-    public $object1;
-    public $object2;
-
+    public $student1;
+    public $student2;
     function __clone()
     {
         // Force a copy of this->object, otherwise
         // it will point to same object.
-        $this->object1 = clone $this->object1;
+        $this->student1 = clone $this->student1;
     }
 }
 
-$obj = new MyCloneable();
+$class = new Classroom();
 
-$obj->object1 = new SubObject();
-$obj->object2 = new SubObject();
+$class->student1 = new Student("John Smith");
+$class->student2 = new Student("Kevin Smith");
 
-$obj2 = clone $obj;
+$class2 = clone $class;
+
+$class2->student2 = new Student("Samantha Clark");
 
 
-print("Original Object:</br>");
-print_r($obj);
-echo "</br>";
+print("<p>Original Object: Classroom Original Teacher's Choice:</p>");
+print_r($class);
 
-print("Cloned Object:\n");
-echo "</br>";
-
-print_r($obj2);
-echo "</br>";
-
+print("<p>Cloned Object: Classroom Secondary Choice Similary to Original Teacher's Choice</p>");
+print_r($class2);
 
 ?>
