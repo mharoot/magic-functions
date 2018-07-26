@@ -2,9 +2,11 @@
 ##### The function names:
 1. [__construct()](https://github.com/mharoot/magic-functions/blob/master/connection.php)
 2. `__destruct()`
-3. `__call()`
+3. [__call()](https://github.com/mharoot/magic-functions/blob/master/call.php)
+    - __call() is triggered when invoking inaccessible methods in an object context.
+    - __callStatic() is triggered when invoking inaccessible methods in a static context.
 4. `__callStatic()`
-5. `__get()`
+5. [__get()](https://github.com/mharoot/magic-functions/blob/master/propertyTest.php)
 6. [__set()](https://github.com/mharoot/magic-functions/blob/master/set.php)
 7. [__isset()](https://github.com/mharoot/magic-functions/blob/master/propertyTest.php)
 8. [__unset()](https://github.com/mharoot/magic-functions/blob/master/propertyTest.php)
