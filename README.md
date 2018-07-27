@@ -7,7 +7,10 @@
     - __callStatic() is triggered when invoking inaccessible methods in a static context.
 4. `__callStatic()`
 5. [__get()](https://github.com/mharoot/magic-functions/blob/master/propertyTest.php)
+- __get() is utilized for reading data from inaccessible properties.
 6. [__set()](https://github.com/mharoot/magic-functions/blob/master/set.php)
+- __set() is run when writing data to inaccessible properties.
+
 7. [__isset()](https://github.com/mharoot/magic-functions/blob/master/propertyTest.php)
 8. [__unset()](https://github.com/mharoot/magic-functions/blob/master/propertyTest.php)
 9. [__sleep()](https://github.com/mharoot/magic-functions/blob/master/connection.php)
